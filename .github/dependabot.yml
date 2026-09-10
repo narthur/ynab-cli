@@ -5,15 +5,25 @@ updates:
     schedule:
       interval: weekly
     groups:
-      all-dependencies:
-        patterns:
-          - "*"
+      all-dependencies-minor-patch:
+        applies-to: version-updates
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+      all-dependencies-major:
+        applies-to: version-updates
+        patterns: ["*"]
+        update-types: ["major"]
 
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
     groups:
-      all-actions:
-        patterns:
-          - "*"
+      all-actions-minor-patch:
+        applies-to: version-updates
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+      all-actions-major:
+        applies-to: version-updates
+        patterns: ["*"]
+        update-types: ["major"]
